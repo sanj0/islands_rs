@@ -131,10 +131,12 @@ fn check_cell(
 }
 
 impl Cell {
+    #[inline(always)]
     fn val(&self, grid: &[bool], w: i32) -> bool {
         grid[(self.1 * w + self.0) as usize]
     }
 
+    #[inline(always)]
     fn rel(&self, dx: i32, dy: i32) -> Cell {
         Cell(self.0 + dx, self.1 + dy)
     }
